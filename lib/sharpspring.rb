@@ -7,14 +7,22 @@ class Sharpspring
 
   GET_OBJECT_METHOD = {
     'lead' => 'getLeads',
+    'campaign' => 'getCampaigns',
+    'account' => 'getAccounts',
+    'opportunity' => 'getOpportunities',
+    'dealStage' => 'getDealStages'
   }
 
   GET_OBJECT_DATE_RANGE_METHOD = {
     'lead' => 'getLeadsDateRange',
+    'opportunity' => 'getOpportunitiesDateRange',
   }
 
   CREATE_OBJECT_METHOD = {
     'lead' => 'createLeads',
+    'campaign' => 'createCampaigns',
+    'account' => 'createAccounts',
+    'opportunity' => 'createOpportunities'
   }
 
   UPDATE_OBJECT_METHOD = {

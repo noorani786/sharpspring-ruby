@@ -1,5 +1,6 @@
 # The Sharpspring Ruby Gem
 
+This gem still requires some extensive testing, but should be a decent starting place if you are integrating sharpspring with your app. This gem is not yet published and is in a pre-alpha state.
 
 ## Example Usage
 ```
@@ -16,4 +17,5 @@ end
 
 lead_list = [{emailAddress: 'test@test.com', firstName: 'nick', lastName: 'bryant'}]
 result = sharpspring.create_objects('lead', lead_list)
-puts "result of creating objects: #{result}"```
+puts "result of creating objects: #{result}"
+```
