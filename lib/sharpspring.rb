@@ -98,27 +98,11 @@ class Sharpspring
   end
 
   def format_crd_params(objects)
-    params = {'objects' => []}
-    objects.each do |object|
-      data = object.data
-      data['id'] = object.external_primarykey
-      params['objects'] << data
-    end
-    params
+    { 'objects' => objects }
   end
 
   def format_crd_response(method, response, objects)
-    formatted_response = []
-    index = 0
-    response['result'][method].zip(objects).each do |result, object|
-      if (result['success'])
-        external_primarykey = result['id'].blank? ? object.external_primarykey : result['id']
-        formatted_response << {success: true, id: object.id, external_primarykey: external_primarykey}
-      else
-        formatted_response << {success: false, id: object.id, error: result['error']}
-      end
-    end
-    formatted_response
+    response['results'][method]
   end
 
   def make_api_call(method, params)
