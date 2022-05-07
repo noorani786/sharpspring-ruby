@@ -34,7 +34,7 @@ class Sharpspring
   }
 
   def initialize(account_id, secret_key)
-    @post_uri = "https://api.sharpspring.com/v1/?accountID=#{account_id}&secretKey=#{secret_key]}"
+    @post_uri = "https://api.sharpspring.com/v1/?accountID=#{account_id}&secretKey=#{secret_key}"
   end
 
   def cleanup
