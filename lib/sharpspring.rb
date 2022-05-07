@@ -34,7 +34,7 @@ class Sharpspring
   }
 
   def initialize(account_id, secret_key)
-    @post_uri = "https://api.sharpspring.com/v1/?accountID=#{account_id}&secretKey=#{secret_key}"
+    @post_uri = "https://api.sharpspring.com/pubapi/v1?accountID=#{account_id}&secretKey=#{secret_key}"
   end
 
   def cleanup
@@ -102,7 +102,7 @@ class Sharpspring
   end
 
   def format_crd_response(method, response, objects)
-    response['results'][method]
+    response.dig('result', method)
   end
 
   def make_api_call(method, params)
@@ -113,7 +113,11 @@ class Sharpspring
       id: request_id
     }.to_json
 
+    puts data
+
     response = RestClient.post @post_uri, data, :content_type => :json, :accept => :json
+
+    puts response.to_str
 
     JSON.parse(response.to_str)
   end
