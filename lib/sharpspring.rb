@@ -41,11 +41,11 @@ class Sharpspring
     @has_more = false
   end
 
-  def get_objects(object_name, page)
+  def get_objects(object_name, page, where = {})
     api_method = GET_OBJECT_METHOD[object_name]
     limit = 200 # 500 fails
     params = {
-      where: {},
+      where: where,
       limit: limit,
       offset: limit * page
     }
