@@ -27,6 +27,7 @@ class Sharpspring
 
   UPDATE_OBJECT_METHOD = {
     'lead' => 'updateLeads',
+    'opportunity' => 'updateOpportunities'
   }
 
   DELETE_OBJECT_METHOD = {
